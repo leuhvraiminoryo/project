@@ -20,5 +20,5 @@ WINDOWHEIGHT = 500
 BOXSIZE = 40
 CAPTION = 'Préparez-vous à entrer dans Xak Tsaroth!!!'
 FPSCLOCK = pygame.time.Clock()
-
+BOXSIZE = 16
 BGCOLOR = RED
