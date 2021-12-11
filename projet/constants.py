@@ -12,13 +12,14 @@ ORANGE   = (255, 128,   0)
 PURPLE   = (255,   0, 255)
 CYAN     = (  0, 255, 255)
 #images
+autel = pygame.image.load('projet/images/autel.png')
 
 #setup
 FPS = 60
-WINDOWWIDTH = 800
-WINDOWHEIGHT = 500
-BOXSIZE = 40
+WX = 800
+WY = 500
 CAPTION = 'Préparez-vous à entrer dans Xak Tsaroth!!!'
 FPSCLOCK = pygame.time.Clock()
 BOXSIZE = 16
-BGCOLOR = RED
+BGCOLOR = GRAY
+DISPLAYSURF = pygame.display.set_mode((WX,WY))
