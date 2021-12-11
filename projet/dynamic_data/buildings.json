@@ -1,0 +1,20 @@
+{
+    "Autel": {
+        "price": 0, "quantity": 0, "upgradable": true
+        }, 
+    "Residence": {
+        "price": 0, "quantity": 0, "upgradable": true
+        }, 
+    "Entrepot": {
+        "price": 0, "quantity": 0, "upgradable": true
+        }, 
+    "Armurerie": {
+        "price": 0, "quantity": 0, "upgradable": true
+        }, 
+    "Decorations": {
+        "price": 0, "quantity": 0, "upgradable": true
+        }, 
+    "Orb": {
+        "price": 0, "quantity": 0, "upgradable": true
+        }
+}
