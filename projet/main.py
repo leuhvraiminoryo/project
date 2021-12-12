@@ -8,8 +8,12 @@ list_buildings = [autel1,orb1]
 while True:
     checkForQuit()
     DISPLAYSURF.fill(BGCOLOR)
+    mouse_pos = pygame.mouse.get_pos ()
+
     for building in list_buildings:
         DISPLAYSURF.blit(b_imgs[building.type], relativeCoordsToPixels(building.pos))
-    highlight(autel1.pos,autel1.size)
+        if mouseOverBuilding(building,mouse_pos):
+            highlight(building.pos,building.size)
+
     pygame.display.update()
     FPSCLOCK.tick(FPS)
