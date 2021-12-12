@@ -1,4 +1,4 @@
-import json, classes
+import json
 from classes import *
 
 def extract(file : str):
@@ -8,7 +8,7 @@ def extract(file : str):
 
 file = open("projet/dynamic_data/test.json", "w")
 
-for i in classes.list_buildings:
+for i in list_buildings:
     data = json.dump(i, file, cls=CustomEncoder)
     
 
