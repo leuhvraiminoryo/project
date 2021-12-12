@@ -7,7 +7,7 @@ GRAY     = (100, 100, 100)
 NAVYBLUE = ( 60,  60, 100)
 WHITE    = (255, 255, 255)
 RED      = (255,   0,   0)
-ARED     = (255,   0,   0, 150)
+ARED     = (255,   0,   0, 50)
 GREEN    = (  0, 255,   0)
 BLUE     = (  0,   0, 255)
 YELLOW   = (255, 255,   0)
@@ -21,17 +21,18 @@ b_imgs = {
     'orb' : pygame.image.load('projet/data/images/orb.png'),
     #'residence' : pygame.image.load('projet/data/images/residence.png'),
     #'entrepot' : pygame.image.load('projet/data/images/entrepot.png'),
-    #'armurerie' : pygame.image.load('projet/data/images/armurerie.png'),
+    'armurerie' : pygame.image.load('projet/data/images/armurerie.png'),
     #'decoration' : pygame.image.load('projet/data/images/decoration.png')
 }
 
 #setup
 FPS = 20
-WX = 800
-WY = 500
+BOXSIZE = 32
+WX = BOXSIZE*20
+WY = BOXSIZE*20
 CAPTION = 'Préparez-vous à entrer dans Xak Tsaroth!!!'
 FPSCLOCK = pygame.time.Clock()
-BOXSIZE = 32
+
 BGCOLOR = GRAY
 DISPLAYSURF = pygame.display.set_mode((WX,WY))
 
@@ -83,6 +84,11 @@ def showTranspaRed(building):
     rect = getBuildRect(building.pos,building.size)
     pygame.draw.rect(DISPLAYSURF, ARED, rect)
 
+def drawGrid():
+    for x in range(0, WX, BOXSIZE):
+        for y in range(0, WY, BOXSIZE):
+            rect = pygame.Rect(x, y, BOXSIZE, BOXSIZE)
+            pygame.draw.rect(DISPLAYSURF, WHITE, rect, 1)
 
 def showGrid():
     for x in range(WX):
@@ -91,7 +97,7 @@ def showGrid():
             pygame.draw.rect(DISPLAYSURF,RED,rect,width=1)
 
 def toPlace(building,mouse_pos):
-    #showGrid()
+    drawGrid()
     sizex,sizey = building.size
     building.pos = pixelsToRelativeCoords(mouse_pos,WX/2+(BOXSIZE*sizex/2),WY/2+(BOXSIZE*sizey/2))
     blitBuilding(building,)
