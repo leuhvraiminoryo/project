@@ -1,11 +1,18 @@
 import json
 
 class Building:
-    def __init__(self, id, type):
-        self.id = id
+    id = 0
+    def __init__(self,type,pos,size):
         self.type = type
-    def affichage(self):
-        print(self.type)
+        self.id = Building.id
+        Building.id += 1
+        self.pos = pos
+        self.lvl = -1
+        self.size = size
+
+    def print_data(self):
+        print(self.type,self.lvl,self.pos)
+        
     def tojson(self):
         return {
             "id" : self.id,
@@ -18,7 +25,3 @@ class CustomEncoder(json.JSONEncoder):
         if "tojson" in dir(o):
             return o.tojson()
         return json.JSONEncoder.default(self, o)
-
-a = Building('Orb1', 'orb')
-
-list_buildings = [a]
