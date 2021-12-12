@@ -48,10 +48,10 @@ def checkForQuit():
             terminateGame()
         pygame.event.post(event)
 
-def getBuildRect(pos,size):
+def getBuildRect(pos,size,cor_pos=-1,cor_size=2):
     x,y = relativeCoordsToPixels(pos)
     sizex, sizey = size[0]*BOXSIZE,size[1]*BOXSIZE
-    rect = pygame.Rect(x-1,y-1,sizex+2,sizey+2)
+    rect = pygame.Rect(x+cor_pos,y+cor_pos,sizex+cor_size,sizey+cor_size)
     return rect
 
 def highlight(pos,size):
@@ -62,7 +62,7 @@ def highlight(pos,size):
     pygame.draw.rect(DISPLAYSURF, WHITE, rect, width=1)
 
 def mouseOverBuilding(building,mouse_pos):
-    rect = getBuildRect(building.pos,building.size)
+    rect = getBuildRect(building.pos,building.size,0,0)
     if rect.collidepoint(mouse_pos):
         return True
     return False
