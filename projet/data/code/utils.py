@@ -81,8 +81,11 @@ def mouseOverBuilding(building,mouse_pos):
     return False
 
 def showTranspaRed(building):
-    rect = getBuildRect(building.pos,building.size)
-    pygame.draw.rect(DISPLAYSURF, ARED, rect)
+    size = relativeCoordsToPixels(building.size,0,0)
+    s = pygame.Surface(size)
+    s.set_alpha(150)
+    s.fill(RED)
+    DISPLAYSURF.blit(s,relativeCoordsToPixels(building.pos))
 
 def drawGrid():
     for x in range(0, WX, BOXSIZE):
