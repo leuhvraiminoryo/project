@@ -7,7 +7,7 @@ GRAY     = (100, 100, 100)
 NAVYBLUE = ( 60,  60, 100)
 WHITE    = (255, 255, 255)
 RED      = (255,   0,   0)
-ARED     = (255,   0,   0, 50)
+ARED     = (255,   0,   0, a=50)
 GREEN    = (  0, 255,   0)
 BLUE     = (  0,   0, 255)
 YELLOW   = (255, 255,   0)
@@ -81,8 +81,9 @@ def mouseOverBuilding(building,mouse_pos):
     return False
 
 def showTranspaRed(building):
+    transp_red = pygame.Color(ARED)
     rect = getBuildRect(building.pos,building.size)
-    pygame.draw.rect(DISPLAYSURF, ARED, rect)
+    pygame.draw.rect(DISPLAYSURF, transp_red, rect)
 
 def drawGrid():
     for x in range(0, WX, BOXSIZE):
