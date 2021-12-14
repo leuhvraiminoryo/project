@@ -1,10 +1,12 @@
 from data.code.utils import *
 
+orb1 = cl.Building('orb',(-1,1),(1,1))
+armurerie1 = cl.Building('armurerie',(-5,3),(3,2))
+armurerie1.lvl = 0
 autel1 = cl.Building('autel',(0,0),(2,2))
 autel1.lvl = 0
-orb1 = cl.Building('orb',(-1,1),(1,1))
 
-list_buildings = [autel1,orb1]
+list_buildings = [autel1,orb1,armurerie1]
 placing = None
 
 while True:
@@ -31,6 +33,7 @@ while True:
             highlight(to_highlight.pos,to_highlight.size)
         else:
             showTranspaRed(to_highlight)
+            blitBuilding(placing)
 
     pygame.display.update()
     FPSCLOCK.tick(FPS)
