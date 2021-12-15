@@ -3,6 +3,7 @@ from pygame.locals import *
 import data.code.classes as cl
 
 #colors
+BLACK    = (  0,   0,   0)
 GRAY     = (100, 100, 100)
 NAVYBLUE = ( 60,  60, 100)
 WHITE    = (255, 255, 255)
@@ -68,16 +69,23 @@ def blitBuilding(building,fade=0):
     img = b_imgs[building.type]
     DISPLAYSURF.blit(img, relativeCoordsToPixels(building.pos))
 
-def highlight(pos,size):
+def highlight(pos,size,color=WHITE):
     """Trace rectangle autours d'un objet
     pos relative en boites
     size relative en boites"""
     rect = getBuildRect(pos,size)
-    pygame.draw.rect(DISPLAYSURF, WHITE, rect, width=1)
+    pygame.draw.rect(DISPLAYSURF, color, rect, width=1)
 
 def mouseOverBuilding(building,mouse_pos):
     rect = getBuildRect(building.pos,building.size,0,0)
     if rect.collidepoint(mouse_pos):
+        return True
+    return False
+
+def buildingOverBuilding(building1,building2):
+    rect1 = getBuildRect(building1.pos,building1.size,0,0)
+    rect2 = getBuildRect(building2.pos,building2.size,0,0)
+    if rect1.colliderect(rect2):
         return True
     return False
 
@@ -87,6 +95,7 @@ def showTranspaRed(building):
     s.set_alpha(150)
     s.fill(RED)
     DISPLAYSURF.blit(s,relativeCoordsToPixels(building.pos))
+    highlight(building.pos,building.size,BLACK)
 
 def drawGrid():
     for x in range(0, WX, BOXSIZE):
