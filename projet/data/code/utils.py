@@ -147,15 +147,12 @@ def cadreMenu(building):
 
 def drawMenu(building):
     """fonction pour draw le menu de sélection d'un building"""
-    menu = pygame.Surface(getMenuSize(building),32)
+    menu = pygame.Surface((5*32,32)) #utiliser getMenuSize() fait bugguer?
     menu.fill(PURPLE)
-    cadre = cadreMenu(building)
-    pygame.draw.rect(menu,PURPLE,cadre)
+    DISPLAYSURF.blit(menu,building.pos)
+    
 
-def checkForClick(building):
-    for event in pygame.event.get(KEYUP):
-        if event.type == MOUSEBUTTONDOWN:
-            drawMenu(building)
+
 
     
 

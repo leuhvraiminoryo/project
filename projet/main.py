@@ -9,11 +9,12 @@ autel1.lvl = 0
 
 list_buildings = [armurerie1,orb1,autel1]
 placing = None
-
+click = False
 while True:
     checkForQuit()
     DISPLAYSURF.fill(BGCOLOR)
     mouse_pos = pygame.mouse.get_pos ()
+    
     to_highlight = None
     to_red = []
 
@@ -27,12 +28,25 @@ while True:
             blitBuilding(building)
             if mouseOverBuilding(building,mouse_pos):
                 to_highlight = building
-                checkForClick(building)
+                for event in pygame.event.get(KEYUP):
+                    if event.type == MOUSEBUTTONDOWN:
+                        click = True
+                    elif event.type == MOUSEBUTTONUP:
+                        click = False
             if buildingOverBuilding(placing,building):
                 to_red.append(building)
         else:
             placing = building
     
+    for event in pygame.event.get(KEYUP):
+        if event.type == MOUSEBUTTONDOWN:
+            click = True
+        elif event.type == MOUSEBUTTONUP:
+            click = False
+    
+    if click:
+        drawMenu()
+
     if to_highlight is not None:
         if placing is None:
             highlight(to_highlight.pos,to_highlight.size)
@@ -41,6 +55,7 @@ while True:
         blitBuilding(placing)
         for t_r in to_red:
             showTranspaRed(t_r)
+    
 
 
     pygame.display.update()
