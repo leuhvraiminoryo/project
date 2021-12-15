@@ -34,6 +34,7 @@ CAPTION = 'Préparez-vous à entrer dans Xak Tsaroth!!!'
 FPSCLOCK = pygame.time.Clock()
 
 BGCOLOR = GRAY
+pygame.display.set_caption(CAPTION)
 DISPLAYSURF = pygame.display.set_mode((WX,WY))
 
 
