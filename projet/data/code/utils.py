@@ -38,6 +38,7 @@ BGCOLOR = GRAY
 pygame.display.set_caption(CAPTION)
 DISPLAYSURF = pygame.display.set_mode((WX,WY))
 
+MENUSIZE = 32
 
 def relativeCoordsToPixels(coords,cor_x=(WX/2),cor_y=(WY/2)):
     x,y = coords
@@ -114,3 +115,49 @@ def toPlace(building,mouse_pos):
     sizex,sizey = building.size
     building.pos = pixelsToRelativeCoords(mouse_pos,WX/2+(BOXSIZE*sizex/2),WY/2+(BOXSIZE*sizey/2))
     blitBuilding(building,)
+
+def isBuildRight(building):
+    """check si le building selectioné est sur la droite relative de la fenêtre"""
+    x,y = relativeCoordsToPixels(building.pos)
+    if x > WX/2:
+        return False
+    return True
+    
+def getMenuCoords(building):
+    x,y = relativeCoordsToPixels(building.pos)
+    if isBuildRight(building):
+        x += building.size[0] + 1
+    else:
+        x -= getMenuSize(building) - 1
+    return (x,y)
+
+def getListManips(building):
+    """permet d'obtenir une liste de manipulations possibles sur un batiment selon son type par un fichier json"""
+    return [1,2,3,4,5] #à modifier, liste temporaire pour tester les autres fonctions
+
+def getMenuSize(building):
+    nb_manips = len(getListManips(building))
+    return MENUSIZE * nb_manips
+
+def cadreMenu(building):
+    topL = getMenuCoords(building)
+    x = getMenuSize(building)
+    cadre = Rect(topL[0],topL[1],x,32)
+    return cadre
+
+def drawMenu(building):
+    """fonction pour draw le menu de sélection d'un building"""
+    menu = pygame.Surface(getMenuSize(building),32)
+    menu.fill(PURPLE)
+    cadre = cadreMenu(building)
+    pygame.draw.rect(menu,PURPLE,cadre)
+
+def checkForClick(building):
+    for event in pygame.event.get(KEYUP):
+        if event.type == MOUSEBUTTONDOWN:
+            drawMenu(building)
+
+    
+
+
+    

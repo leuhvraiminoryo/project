@@ -27,6 +27,7 @@ while True:
             blitBuilding(building)
             if mouseOverBuilding(building,mouse_pos):
                 to_highlight = building
+                checkForClick(building)
             if buildingOverBuilding(placing,building):
                 to_red.append(building)
         else:
