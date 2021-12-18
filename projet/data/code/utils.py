@@ -42,11 +42,11 @@ MENUSIZE = 32
 
 def relativeCoordsToPixels(coords,cor_x=(WX/2),cor_y=(WY/2)):
     x,y = coords
-    return ((x*BOXSIZE)+cor_x,(y*BOXSIZE)+cor_y)
+    return [(x*BOXSIZE)+cor_x,(y*BOXSIZE)+cor_y]
 
 def pixelsToRelativeCoords(coords,cor_x=(WX/2),cor_y=(WY/2)):
     x,y = coords
-    return (round((x-cor_x)/BOXSIZE),round((y-cor_y)/BOXSIZE))
+    return [round((x-cor_x)/BOXSIZE),round((y-cor_y)/BOXSIZE)]
 
 def terminateGame():
     pygame.quit()
@@ -104,12 +104,6 @@ def drawGrid():
             rect = pygame.Rect(x, y, BOXSIZE, BOXSIZE)
             pygame.draw.rect(DISPLAYSURF, WHITE, rect, 1)
 
-def showGrid():
-    for x in range(WX):
-        for y in range(WY):
-            rect = getBuildRect((x,y),(1,1),0,0,0,0)
-            pygame.draw.rect(DISPLAYSURF,RED,rect,width=1)
-
 def toPlace(building,mouse_pos):
     drawGrid()
     sizex,sizey = building.size
@@ -147,9 +141,16 @@ def cadreMenu(building):
 
 def drawMenu(building):
     """fonction pour draw le menu de sélection d'un building"""
-    menu = pygame.Surface((5*32,32)) #utiliser getMenuSize() fait bugguer?
+    size = getMenuSize(building)
+    menu = pygame.Surface((size+10,32)) #utiliser getMenuSize() fait bugguer?
     menu.fill(PURPLE)
-    DISPLAYSURF.blit(menu,relativeCoordsToPixels(building.pos))
+    display_coords = relativeCoordsToPixels(building.pos)
+    build_size = (building.size[0]*BOXSIZE,building.size[1]*BOXSIZE) 
+    print(display_coords)
+    display_coords[0] -= (size+10-build_size[0])/2
+    display_coords[1] -= build_size[1]/3
+    print(display_coords)
+    DISPLAYSURF.blit(menu,display_coords)
     
 
 
