@@ -3,7 +3,7 @@ from data.code.utils import *
 orb1 = cl.Building('orb',(-1,1),(1,1))
 orb1.lvl = 0
 armurerie1 = cl.Building('armurerie',(-5,3),(3,2))
-armurerie1.lvl = -1
+armurerie1.lvl = 0
 autel1 = cl.Building('autel',(0,0),(2,2))
 autel1.lvl = 0
 
@@ -17,35 +17,31 @@ while True:
     
     to_highlight = None
     to_red = []
+    to_menu = None
 
     if placing is not None:
         toPlace(placing,mouse_pos)
 
     placing = None
 
+    for event in pygame.event.get():
+        if event.type == MOUSEBUTTONDOWN:
+            click = True
+        elif event.type == MOUSEBUTTONUP:
+            click = False
+
     for building in list_buildings:
         if building.lvl >= 0:
             blitBuilding(building)
             if mouseOverBuilding(building,mouse_pos):
                 to_highlight = building
-                for event in pygame.event.get(KEYUP):
-                    if event.type == MOUSEBUTTONDOWN:
-                        click = True
-                    elif event.type == MOUSEBUTTONUP:
-                        click = False
-            if buildingOverBuilding(placing,building):
-                to_red.append(building)
+                if click:
+                    to_menu = building
+            if placing is not None:
+                if buildingOverBuilding(placing,building):
+                    to_red.append(building)
         else:
             placing = building
-    
-    for event in pygame.event.get(KEYUP):
-        if event.type == MOUSEBUTTONDOWN:
-            click = True
-        elif event.type == MOUSEBUTTONUP:
-            click = False
-    
-    if click:
-        drawMenu()
 
     if to_highlight is not None:
         if placing is None:
@@ -55,6 +51,9 @@ while True:
         blitBuilding(placing)
         for t_r in to_red:
             showTranspaRed(t_r)
+
+    if to_menu is not None:
+        drawMenu(to_menu)
     
 
 

@@ -149,7 +149,7 @@ def drawMenu(building):
     """fonction pour draw le menu de sélection d'un building"""
     menu = pygame.Surface((5*32,32)) #utiliser getMenuSize() fait bugguer?
     menu.fill(PURPLE)
-    DISPLAYSURF.blit(menu,building.pos)
+    DISPLAYSURF.blit(menu,relativeCoordsToPixels(building.pos))
     
 
 
