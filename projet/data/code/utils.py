@@ -1,4 +1,4 @@
-import pygame, sys, json
+import pygame, sys, json, extract
 from pygame.locals import *
 import data.code.classes as cl
 
@@ -38,7 +38,8 @@ BGCOLOR = GRAY
 pygame.display.set_caption(CAPTION)
 DISPLAYSURF = pygame.display.set_mode((WX,WY))
 
-MENUSIZE = 32
+MENUX = 32
+MENUY = 32
 
 def relativeCoordsToPixels(coords,cor_x=(WX/2),cor_y=(WY/2)):
     x,y = coords
@@ -131,7 +132,7 @@ def getListManips(building):
 
 def getMenuSize(building):
     nb_manips = len(getListManips(building))
-    return MENUSIZE * nb_manips
+    return MENUX * nb_manips
 
 def cadreMenu(building):
     topL = getMenuCoords(building)
@@ -142,13 +143,13 @@ def cadreMenu(building):
 def drawMenu(building):
     """fonction pour draw le menu de sélection d'un building"""
     size = getMenuSize(building)
-    menu = pygame.Surface((size+10,32)) #utiliser getMenuSize() fait bugguer?
+    menu = pygame.Surface((size+10,MENUY)) #utiliser getMenuSize() fait bugguer?
     menu.fill(PURPLE)
     display_coords = relativeCoordsToPixels(building.pos)
     build_size = (building.size[0]*BOXSIZE,building.size[1]*BOXSIZE) 
     print(display_coords)
     display_coords[0] -= (size+10-build_size[0])/2
-    display_coords[1] -= build_size[1]/3
+    display_coords[1] -= build_size[1] - MENUY-1
     print(display_coords)
     DISPLAYSURF.blit(menu,display_coords)
     
