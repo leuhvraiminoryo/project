@@ -1,4 +1,4 @@
-import pygame, sys, json, extract
+import pygame, sys, json, data.code.extract
 from pygame.locals import *
 import data.code.classes as cl
 
@@ -68,7 +68,7 @@ def getBuildRect(pos,size,cor_pos=-1,cor_size=2,cor_r_pos_x=WX/2,cor_r_pos_y=WY/
     return rect
 
 def blitBuilding(building,fade=0):
-    img = b_imgs[building.type]
+    img = b_imgs[building.name]
     DISPLAYSURF.blit(img, relativeCoordsToPixels(building.pos))
 
 def highlight(pos,size,color=WHITE):

@@ -1,10 +1,10 @@
 from data.code.utils import *
 
-orb1 = cl.Building('orb',(-1,1),(1,1))
+orb1 = cl.Building('orb','standard',(-1,1),(1,1))
 orb1.lvl = 0
-armurerie1 = cl.Building('armurerie',(-5,3),(3,2))
+armurerie1 = cl.Building('armurerie','standard',(-5,3),(3,2))
 armurerie1.lvl = 0
-autel1 = cl.Building('autel',(0,0),(2,2))
+autel1 = cl.Building('autel','standard',(0,0),(2,2))
 autel1.lvl = 0
 
 list_buildings = [armurerie1,orb1,autel1]
