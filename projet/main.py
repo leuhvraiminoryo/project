@@ -1,6 +1,6 @@
 from data.code.utils import *
 
-orb1 = cl.Building('orb','standard',(-1,1),(1,1))
+orb1 = cl.Building('orb','standard',(-3,-2),(2,2))
 orb1.lvl = 0
 armurerie1 = cl.Building('armurerie','standard',(-5,3),(3,2))
 armurerie1.lvl = 0
