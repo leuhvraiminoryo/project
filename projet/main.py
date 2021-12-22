@@ -13,7 +13,8 @@ click = False
 while True:
     checkForQuit()
     DISPLAYSURF.fill(BGCOLOR)
-    text.show_text(str(e.ressources['soul_points']) + 'sp',2,10,1,9999,font,DISPLAYSURF)
+    text.show_text(str(e.ressources['soul_points']) + ' sp',2,10,1,9999,small_font,DISPLAYSURF)
+    text.show_text('Ceci est un petit test ... \\/:;,',160,50,5,99999,other_font,DISPLAYSURF)
     e.ressources['soul_points'] += 1
     mouse_pos = pygame.mouse.get_pos ()
     
