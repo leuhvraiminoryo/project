@@ -11,6 +11,7 @@ class Building:
         self.lvl = -1
         self.size = size
         self.cooldowns = {"tg" : 0, "trg" : 0, "rrg" : 0, "wrg" : 0}
+        self.add_perm = True
 
     def print_data(self):
         print(self.type,self.lvl,self.pos)

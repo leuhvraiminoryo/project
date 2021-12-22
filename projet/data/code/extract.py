@@ -15,6 +15,7 @@ codes = {"sp" : "soul_points",
 "h" : "happiness", "r" : "residents", 
 "fc" : "max_faith", "spc" : "max_sp", 
 "ic" : "qtt_ressources", "ec" : "max_equipement"}
+
 #répartition des différents arbres d'évolution :
 orb_tree = tree["orb"]
 autel_tree = tree["autel"]
@@ -30,14 +31,13 @@ def decodage(building):
     for effect in code:
         effect = effect.split()
         cd = effect[0]
-        if cd == "n": 
+        if cd == "n" and building.add_perm:
+            building.add_perm = False
             ressources[codes[effect[1]]] += effect[2]
         if building.cooldowns[cd] >= effect[1]:
             ressources[codes[effect[2]]] += effect[3]
         
             
-
-        
 
 #for i in list_buildings:
 #    data = json.dump(i, file, cls=CustomEncoder)
