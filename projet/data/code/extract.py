@@ -1,5 +1,4 @@
 import json
-from data.code.classes import *
 
 #fonction d'extraction de fichier json :
 def extract(file : str):

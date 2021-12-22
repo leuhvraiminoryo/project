@@ -1,6 +1,8 @@
 import pygame, sys, json, data.code.extract
 from pygame.locals import *
 import data.code.classes as cl
+import data.code.text as text
+import data.code.extract as e
 
 #colors
 BLACK    = (  0,   0,   0)
@@ -40,6 +42,26 @@ DISPLAYSURF = pygame.display.set_mode((WX,WY))
 
 MENUX = 32
 MENUY = 32
+
+# Text ------------------------------------------------------- #
+def get_text_width(text,spacing):
+    global font_dat
+    width = 0
+    for char in text:
+        if char in font_dat:
+            width += font_dat[char][0] + spacing
+        elif char == ' ':
+            width += font_dat['A'][0] + spacing
+    return width
+
+global font_dat
+font_dat = {'A':[3],'B':[3],'C':[3],'D':[3],'E':[3],'F':[3],'G':[3],'H':[3],'I':[3],'J':[3],'K':[3],'L':[3],'M':[5],'N':[3],'O':[3],'P':[3],'Q':[3],'R':[3],'S':[3],'T':[3],'U':[3],'V':[3],'W':[5],'X':[3],'Y':[3],'Z':[3],
+          'a':[3],'b':[3],'c':[3],'d':[3],'e':[3],'f':[3],'g':[3],'h':[3],'i':[1],'j':[2],'k':[3],'l':[3],'m':[5],'n':[3],'o':[3],'p':[3],'q':[3],'r':[2],'s':[3],'t':[3],'u':[3],'v':[3],'w':[5],'x':[3],'y':[3],'z':[3],
+          '.':[1],'-':[3],',':[2],':':[1],'+':[3],'\'':[1],'!':[1],'?':[3],
+          '0':[3],'1':[3],'2':[3],'3':[3],'4':[3],'5':[3],'6':[3],'7':[3],'8':[3],'9':[3],
+          '(':[2],')':[2],'/':[3],'_':[5],'=':[3],'\\':[3],'[':[2],']':[2],'*':[3],'"':[3],'<':[3],'>':[3],';':[1]}
+font = text.generate_font('projet/data/font/small_font.png',font_dat,5,8,(248,248,248))
+
 
 def relativeCoordsToPixels(coords,cor_x=(WX/2),cor_y=(WY/2)):
     x,y = coords
