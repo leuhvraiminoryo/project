@@ -20,6 +20,15 @@ entrepot_tree = tree["entrepot"]
 #liste des décorations :
 decorations = tree["decorations"]
 
+def decodage(building):
+    code = tree[building.name][building.type][building.level].split('; ')
+    for effect in code:
+        if code.startswith("n"):
+
+        
+
+
+
 
 
 

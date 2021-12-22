@@ -1,7 +1,3 @@
-{
-    "Faith": 0, 
-    "Soul Points": 0, 
-    "Aesthetic": 0, 
-    "Happiness": 0, 
-    "Residents": 0
-}
+{"faith": 0, "soul_points": 0, "aesthetic": 0, "happiness": 0, "residents": 0,
+"max_faith" : 10, "max_sp" : 10,                            "max_residents" : 50,
+"qtt_ressources" : 50, "max_equipement" : 10}

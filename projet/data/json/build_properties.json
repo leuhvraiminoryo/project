@@ -1,42 +1,42 @@
 {
     "orb" : {
-        "standard" : ["f 50 tg 10; ae 100",
-                "f 100 tg 10; ae 200",
-                "f 200 tg 10; ae 400"] ,
-        "devout" : ["f 500 tg 10",
-                "f 1000 tg 10",
-                "f 1500 tg 10"],
+        "standard" : ["tg 10 f 50; n ae 100",
+                "tg 10 f 100; n ae 200",
+                "tg 10 f 200; n ae 400"] ,
+        "devout" : ["tg 10 f 500",
+                "tg 10 f 1000",
+                "tg 10 f 1500"],
             "messiah" : [],
             "holy" : [],
             "divine" : [],
         
-        "lascivous" : ["ae 700",
-                    "ae 1500",
-                    "ae 3000"],
+        "lascivous" : ["n ae 700",
+                    "n ae 1500",
+                    "n ae 3000"],
             "fallen" : [],
             "desire" : [],
             "demonic" : []
     },
     "autel" : {
-        "standard" : ["f 10 tg 10; sp 5 tg 10; ae 100; h 100 tg 10",
-            "f 20 tg 10; sp 10 tg 10; ae 200; h 200 tg 10",
-            "f 40 tg 10; sp 20 tg 10; ae 400; h 400 tg 10"]
+        "standard" : ["tg 10 f 10; tg 10 sp 5; n ae 100; tg 10 h 100",
+            "tg 10 f 20; tg 10 sp 10; ae 200; tg 10 h 200",
+            "tg 10 f 40; tg 10 sp 20; n ae 400; tg 10 h 400"]
     },
     "armurerie" : {
-        "standard" : ["ec 10; ae 20",
-            "ec 15; ae 40",
-            "ec 20; ae 60"]
+        "standard" : ["n ec 10; n ae 20",
+            "n ec 15; n ae 40",
+            "n ec 20; n ae 60"]
     },
     "residences" : {
-        "standard" : ["rc 10","rc 20","rc 40"]
+        "standard" : ["n rc 10","n rc 20","n rc 40"]
     },
     "entrepot" : {
-        "standard" : ["ic 10","ic 15","ic 20"]
+        "standard" : ["n ic 10","n ic 15","n ic 20"]
     },
     "decorations" : {
-        "arbre" : ["h 20 tg 10; ae 50"],
-        "buisson" : ["h 15 tg 10; ae 40"],
-        "caillou" : ["ae 50"],
-        "fleur" : ["ae 1"]
+        "arbre" : ["tg 10 h 20 ; n ae 50"],
+        "buisson" : ["tg 10 h 15 ; n ae 40"],
+        "caillou" : ["n ae 50"],
+        "fleur" : ["n ae 1"]
     }
 }

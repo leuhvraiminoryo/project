@@ -2,13 +2,15 @@ import json
 
 class Building:
     id = 0
-    def __init__(self,type,pos,size):
+    def __init__(self,name,type,pos,size,cooldown):
+        self.name = name
         self.type = type
         self.id = Building.id
         Building.id += 1
         self.pos = pos
         self.lvl = -1
         self.size = size
+        self.cooldown = cooldown
 
     def print_data(self):
         print(self.type,self.lvl,self.pos)
