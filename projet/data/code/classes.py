@@ -1,4 +1,6 @@
-import json
+import json, time
+
+from data.code.extract import decodage
 
 class Building:
     id = 0
@@ -10,8 +12,12 @@ class Building:
         self.pos = pos
         self.lvl = -1
         self.size = size
-        self.cooldowns = {"tg" : 0, "trg" : 0, "rrg" : 0, "wrg" : 0}
+        self.cooldowns = {"n":-1,"tg" : 0, "trg" : 0, "rrg" : 0, "wrg" : 0}
         self.add_perm = True
+
+    def update(self):
+        self.cooldowns["tg"] += 0.1
+        decodage(self)
 
     def print_data(self):
         print(self.type,self.lvl,self.pos)

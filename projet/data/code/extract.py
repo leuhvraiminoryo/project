@@ -26,15 +26,16 @@ entrepot_tree = tree["entrepot"]
 decorations = tree["decorations"]
 
 def decodage(building):
-    code = tree[building.name][building.type][building.level].split('; ')
+    code = tree[building.name][building.type][building.lvl].split('; ')
     for effect in code:
         effect = effect.split()
         cd = effect[0]
         if cd == "n" and building.add_perm:
             building.add_perm = False
-            ressources[codes[effect[1]]] += effect[2]
-        if building.cooldowns[cd] >= effect[1]:
-            ressources[codes[effect[2]]] += effect[3]
+            ressources[codes[effect[2]]] += int(effect[3])
+        elif building.cooldowns[cd] >= int(effect[1]):
+            building.cooldowns[cd] = 0
+            ressources[codes[effect[2]]] += int(effect[3])
         
             
 

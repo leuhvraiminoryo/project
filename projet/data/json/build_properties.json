@@ -1,8 +1,8 @@
 {
     "orb" : {
-        "standard" : ["tg 10 f 50; n ae 100",
-                "tg 10 f 100; n ae 200",
-                "tg 10 f 200; n ae 400"] ,
+        "standard" : ["tg 10 f 50; n 0 ae 100",
+                "tg 10 f 100; n 0 ae 200",
+                "tg 10 f 200; n 0 ae 400"] ,
         "devout" : ["tg 10 f 500",
                 "tg 10 f 1000",
                 "tg 10 f 1500"],
@@ -10,33 +10,33 @@
             "holy" : [],
             "divine" : [],
         
-        "lascivous" : ["n ae 700",
-                    "n ae 1500",
-                    "n ae 3000"],
+        "lascivous" : ["n 0 ae 700",
+                    "n 0 ae 1500",
+                    "n 0 ae 3000"],
             "fallen" : [],
             "desire" : [],
             "demonic" : []
     },
     "autel" : {
-        "standard" : ["tg 10 f 10; tg 10 sp 5; n ae 100; tg 10 h 100",
+        "standard" : ["tg 10 f 10; tg 10 sp 5; n 0 ae 100; tg 10 h 100",
             "tg 10 f 20; tg 10 sp 10; ae 200; tg 10 h 200",
-            "tg 10 f 40; tg 10 sp 20; n ae 400; tg 10 h 400"]
+            "tg 10 f 40; tg 10 sp 20; n 0 ae 400; tg 10 h 400"]
     },
     "armurerie" : {
-        "standard" : ["n ec 10; n ae 20",
-            "n ec 15; n ae 40",
-            "n ec 20; n ae 60"]
+        "standard" : ["n 0 ec 10; n 0 ae 20",
+            "n 0 ec 15; n 0 ae 40",
+            "n 0 ec 20; n 0 ae 60"]
     },
     "residences" : {
-        "standard" : ["n rc 10","n rc 20","n rc 40"]
+        "standard" : ["n 0 rc 10","n 0 rc 20","n 0 rc 40"]
     },
     "entrepot" : {
-        "standard" : ["n ic 10","n ic 15","n ic 20"]
+        "standard" : ["n 0 ic 10","n 0 ic 15","n 0 ic 20"]
     },
     "decorations" : {
-        "arbre" : ["tg 10 h 20 ; n ae 50"],
-        "buisson" : ["tg 10 h 15 ; n ae 40"],
-        "caillou" : ["n ae 50"],
-        "fleur" : ["n ae 1"]
+        "arbre" : ["tg 10 h 20 ; n 0 ae 50"],
+        "buisson" : ["tg 10 h 15 ; n 0 ae 40"],
+        "caillou" : ["n 0 ae 50"],
+        "fleur" : ["n 0 ae 1"]
     }
 }
