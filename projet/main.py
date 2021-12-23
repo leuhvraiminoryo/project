@@ -9,7 +9,8 @@ autel1.lvl = 0
 
 list_buildings = [armurerie1,orb1,autel1]
 placing = None
-click = False
+left_click = False
+right_click = False
 while True:
     checkForQuit()
     DISPLAYSURF.fill(BGCOLOR)
@@ -22,16 +23,23 @@ while True:
     to_red = []
     to_menu = None
 
-    if placing is not None:
-        toPlace(placing,mouse_pos)
-
-    placing = None
-
     for event in pygame.event.get():
         if event.type == MOUSEBUTTONDOWN:
-            click = True
+            if event.button == 1:
+                left_click = True
+            if event.button == 3:
+                right_click = True
         elif event.type == MOUSEBUTTONUP:
-            click = False
+            if event.button == 1:
+                left_click = False
+            if event.button == 3:
+                right_click = False
+
+    if placing is not None:
+        toPlace(placing,mouse_pos)
+        if left_click:
+            placing = None
+    
 
     for building in list_buildings:
         if building.lvl >= 0:
@@ -39,13 +47,16 @@ while True:
             blitBuilding(building)
             if mouseOverBuilding(building,mouse_pos):
                 to_highlight = building
-                if click:
+                if right_click:
                     to_menu = building
+                if left_click:
+                    placing = building
             if placing is not None:
                 if buildingOverBuilding(placing,building):
                     to_red.append(building)
         else:
             placing = building
+
 
     if to_highlight is not None:
         if placing is None:
@@ -58,6 +69,7 @@ while True:
 
     if to_menu is not None:
         drawMenu(to_menu)
+    
     
 
     print(e.ressources)
