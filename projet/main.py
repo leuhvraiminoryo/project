@@ -35,10 +35,11 @@ while True:
             if event.button == 3:
                 right_click = False
 
+    if left_click:
+        placing = None
     if placing is not None:
         toPlace(placing,mouse_pos)
-        if not left_click:
-            placing = None
+        
     
 
     for building in list_buildings:
@@ -47,9 +48,9 @@ while True:
             blitBuilding(building)
             if mouseOverBuilding(building,mouse_pos):
                 to_highlight = building
+                #if right_click:
+                #    to_menu = building
                 if right_click:
-                    to_menu = building
-                if left_click:
                     placing = building
             if placing is not None:
                 if buildingOverBuilding(placing,building):
