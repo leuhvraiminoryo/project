@@ -3,6 +3,7 @@ from pygame.locals import *
 import data.code.classes as cl
 import data.code.text as text
 import data.code.extract as e
+from data.code.extract import extract
 
 #colors
 BLACK    = (  0,   0,   0)
@@ -42,6 +43,16 @@ DISPLAYSURF = pygame.display.set_mode((WX,WY))
 
 MENUX = 32
 MENUY = 32
+
+#setup buildings
+orb1 = cl.Building('orb','standard',(-3,-2),(2,2))
+orb1.lvl = 0
+armurerie1 = cl.Building('armurerie','standard',(-5,3),(3,2))
+armurerie1.lvl = 0
+autel1 = cl.Building('autel','standard',(0,0),(2,2))
+autel1.lvl = 0
+
+list_buildings = [armurerie1,orb1,autel1]
 
 # Text ------------------------------------------------------- #
 def get_text_width(text,spacing,font_dat):
@@ -100,7 +111,7 @@ def blitBuilding(building,fade=0):
     DISPLAYSURF.blit(img, relativeCoordsToPixels(building.pos))
 
 def highlight(pos,size,color=WHITE):
-    """Trace rectangle autours d'un objet
+    """Trace rectangle autours d'un buildet
     pos relative en boites
     size relative en boites"""
     rect = getBuildRect(pos,size)
@@ -137,7 +148,9 @@ def toPlace(building,mouse_pos):
     drawGrid()
     sizex,sizey = building.size
     building.pos = pixelsToRelativeCoords(mouse_pos,WX/2+(BOXSIZE*sizex/2),WY/2+(BOXSIZE*sizey/2))
-    blitBuilding(building,)
+    blitBuilding(building)
+    
+
 
 def isBuildRight(building):
     """check si le building selectioné est sur la droite relative de la fenêtre"""
@@ -182,9 +195,28 @@ def drawMenu(building):
     DISPLAYSURF.blit(menu,display_coords)
     
 
+def save_buildings(list_buildings,file_name):
+    dict_prin = {}
+    for i in list_buildings:
+        dict_prin[i.get_bat_id()] = i.tojson()
+    with open(file_name,"w") as file:
+        data = json.dump(dict_prin, file, cls=cl.CustomEncoder, sort_keys=True, indent=4)
 
 
-    
+save_buildings(list_buildings,"projet/data/json/yeet.json")
+def load_buildings(file):
+    list_builds = []
+    dict_prin = extract(file)
+    for v in dict_prin.values():
+        build = cl.Building(v["name"], v["type"],v["pos"],v["size"])
+        build.id = v["id"]
+        build.add_perm = v["add_perm"]
+        build.cooldowns = v["cooldowns"]
+        build.lvl = v["lvl"]
+        list_builds.append(build)
+    return list_builds
+
+
 
 
     

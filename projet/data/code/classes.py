@@ -24,9 +24,17 @@ class Building:
         
     def tojson(self):
         return {
+            "name" : self.name,
+            "type" : self.type,
             "id" : self.id,
-            "type": self.type
+            "pos" : self.pos,
+            "lvl" : self.lvl,
+            "size" : self.size,
+            "cooldowns" : self.cooldowns,
+            "add_perm" : self.add_perm
         }
+    def get_bat_id(self):
+        return self.name + str(self.id)
     
 
 class CustomEncoder(json.JSONEncoder):

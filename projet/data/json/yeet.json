@@ -1,0 +1,68 @@
+{
+    "armurerie1": {
+        "add_perm": true,
+        "cooldowns": {
+            "n": -1,
+            "rrg": 0,
+            "tg": 0,
+            "trg": 0,
+            "wrg": 0
+        },
+        "id": 1,
+        "lvl": 0,
+        "name": "armurerie",
+        "pos": [
+            -5,
+            3
+        ],
+        "size": [
+            3,
+            2
+        ],
+        "type": "standard"
+    },
+    "autel2": {
+        "add_perm": true,
+        "cooldowns": {
+            "n": -1,
+            "rrg": 0,
+            "tg": 0,
+            "trg": 0,
+            "wrg": 0
+        },
+        "id": 2,
+        "lvl": 0,
+        "name": "autel",
+        "pos": [
+            0,
+            0
+        ],
+        "size": [
+            2,
+            2
+        ],
+        "type": "standard"
+    },
+    "orb0": {
+        "add_perm": true,
+        "cooldowns": {
+            "n": -1,
+            "rrg": 0,
+            "tg": 0,
+            "trg": 0,
+            "wrg": 0
+        },
+        "id": 0,
+        "lvl": 0,
+        "name": "orb",
+        "pos": [
+            -3,
+            -2
+        ],
+        "size": [
+            2,
+            2
+        ],
+        "type": "standard"
+    }
+}

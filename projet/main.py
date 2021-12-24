@@ -1,13 +1,5 @@
 from data.code.utils import *
 
-orb1 = cl.Building('orb','standard',(-3,-2),(2,2))
-orb1.lvl = 0
-armurerie1 = cl.Building('armurerie','standard',(-5,3),(3,2))
-armurerie1.lvl = 0
-autel1 = cl.Building('autel','standard',(0,0),(2,2))
-autel1.lvl = 0
-
-list_buildings = [armurerie1,orb1,autel1]
 placing = None
 left_click = False
 right_click = False
@@ -72,8 +64,8 @@ while True:
         drawMenu(to_menu)
     
     
-
-    print(e.ressources)
+    list_buildings = load_buildings("projet/data/json/yeet.json")
+    print(list_buildings)
 
     pygame.display.update()
     FPSCLOCK.tick(FPS)

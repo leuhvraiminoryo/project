@@ -1,1 +1,10 @@
-{"id": "Orb1", "type": "orb"}
+{
+    "id": 1,
+    "type": "standard"
+}{
+    "id": 0,
+    "type": "standard"
+}{
+    "id": 2,
+    "type": "standard"
+}

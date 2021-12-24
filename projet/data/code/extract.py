@@ -37,10 +37,6 @@ def decodage(building):
             building.cooldowns[cd] = 0
             ressources[codes[effect[2]]] += int(effect[3])
         
-            
-
-#for i in list_buildings:
-#    data = json.dump(i, file, cls=CustomEncoder)
     
 
 #res = extract('projet/dynamic_data/ressources.json')

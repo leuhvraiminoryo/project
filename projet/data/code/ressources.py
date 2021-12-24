@@ -11,4 +11,4 @@ while True:
     print(dict.items())
 
 file = open("projet/buildings.json", "w")
-json.dump(dict, file)
+json.dump(dict, file, sort_keys=True, indent = 4)
