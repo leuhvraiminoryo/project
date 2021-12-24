@@ -88,17 +88,18 @@ def pixelsToRelativeCoords(coords,cor_x=(WX/2),cor_y=(WY/2)):
     x,y = coords
     return [round((x-cor_x)/BOXSIZE),round((y-cor_y)/BOXSIZE)]
 
-def terminateGame(l_b):
+def terminateGame(l_b,res):
     save_buildings(l_b,"projet/data/json/yeet.json")
+    save_res(res,"projet/data/json/ressources.json")
     pygame.quit()
     sys.exit()
 
-def checkForQuit(l_b):
+def checkForQuit(l_b,res):
     for event in pygame.event.get(QUIT):
-        terminateGame(l_b)
+        terminateGame(l_b,res)
     for event in pygame.event.get(KEYUP):
         if event.key == K_ESCAPE:
-            terminateGame(l_b)
+            terminateGame(l_b,res)
         pygame.event.post(event)
 
 def getBuildRect(pos,size,cor_pos=-1,cor_size=2,cor_r_pos_x=WX/2,cor_r_pos_y=WY/2):
@@ -202,6 +203,10 @@ def save_buildings(list_buildings,file_name):
         dict_prin[i.get_bat_id()] = i.tojson()
     with open(file_name,"w") as file:
         data = json.dump(dict_prin, file, cls=cl.CustomEncoder, sort_keys=True, indent=4)
+
+def save_res(res,file_name):
+    with open(file_name,"w") as file:
+        data = json.dump(res,file)
 
 def load_buildings(file):
     list_builds = []

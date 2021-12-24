@@ -8,7 +8,7 @@ list_buildings = load_buildings("projet/data/json/yeet.json")
 print(list_buildings)
 
 while True:
-    checkForQuit(list_buildings)
+    checkForQuit(list_buildings,e.ressources)
     DISPLAYSURF.fill(BGCOLOR)
     text.show_text(str(e.ressources['soul_points']) + ' sp',2,10,1,9999,small_font,DISPLAYSURF)
     #text.show_text('Ceci est un petit test ... \\/:;,',160,50,5,99999,other_font,DISPLAYSURF)
