@@ -37,7 +37,7 @@ while True:
 
     if placing is not None:
         toPlace(placing,mouse_pos)
-        if left_click:
+        if not left_click:
             placing = None
     
 
