@@ -23,10 +23,10 @@ residences_tree = tree["residences"]
 entrepot_tree = tree["entrepot"]
 
 #liste des décorations :
-decorations = tree["decorations"]
+decorations = tree["decoration"]
 
 def decodage(building):
-    code = tree[building.name][building.type][building.lvl].split('; ')
+    code = tree[building.category][building.type][building.lvl].split('; ')
     for effect in code:
         effect = effect.split()
         cd = effect[0]

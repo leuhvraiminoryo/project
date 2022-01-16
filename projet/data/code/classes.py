@@ -4,13 +4,13 @@ from data.code.extract import decodage
 
 class Building:
     id = 0
-    def __init__(self,name,type,pos,size):
-        self.name = name
+    def __init__(self,category,type,pos,size):
+        self.category = category
         self.type = type
         self.id = Building.id
         Building.id += 1
         self.pos = pos
-        self.lvl = -1
+        self.lvl = 0
         self.size = size
         self.cooldowns = {"n":-1,"tg" : 0, "trg" : 0, "rrg" : 0, "wrg" : 0}
         self.add_perm = True
@@ -24,7 +24,7 @@ class Building:
         
     def tojson(self):
         return {
-            "name" : self.name,
+            "category" : self.category,
             "type" : self.type,
             "id" : self.id,
             "pos" : self.pos,
@@ -34,7 +34,7 @@ class Building:
             "add_perm" : self.add_perm
         }
     def get_bat_id(self):
-        return self.name + str(self.id)
+        return self.category + str(self.id)
     
 
 class CustomEncoder(json.JSONEncoder):

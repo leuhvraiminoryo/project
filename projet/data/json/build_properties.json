@@ -33,7 +33,7 @@
     "entrepot" : {
         "standard" : ["n 0 ic 10","n 0 ic 15","n 0 ic 20"]
     },
-    "decorations" : {
+    "decoration" : {
         "arbre" : ["tg 10 h 20 ; n 0 ae 50"],
         "buisson" : ["tg 10 h 15 ; n 0 ae 40"],
         "caillou" : ["n 0 ae 50"],

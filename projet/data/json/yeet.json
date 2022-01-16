@@ -1,19 +1,41 @@
 {
     "armurerie1": {
         "add_perm": false,
+        "category": "armurerie",
         "cooldowns": {
             "n": -1,
             "rrg": 0,
-            "tg": 200.69999999999288,
+            "tg": 49.40000000000043,
             "trg": 0,
             "wrg": 0
         },
         "id": 1,
         "lvl": 0,
-        "name": "armurerie",
+        "pos": [
+            -5,
+            3
+        ],
+        "size": [
+            3,
+            2
+        ],
+        "type": "standard"
+    },
+    "armurerie7": {
+        "add_perm": false,
+        "category": "armurerie",
+        "cooldowns": {
+            "n": -1,
+            "rrg": 0,
+            "tg": 30.600000000000165,
+            "trg": 0,
+            "wrg": 0
+        },
+        "id": 7,
+        "lvl": 0,
         "pos": [
             -4,
-            -3
+            -8
         ],
         "size": [
             3,
@@ -23,18 +45,216 @@
     },
     "autel2": {
         "add_perm": false,
+        "category": "autel",
         "cooldowns": {
             "n": -1,
             "rrg": 0,
-            "tg": 8.799999999999985,
+            "tg": 8.999999999999984,
             "trg": 0,
             "wrg": 0
         },
         "id": 2,
         "lvl": 0,
-        "name": "autel",
         "pos": [
-            -7,
+            0,
+            0
+        ],
+        "size": [
+            2,
+            2
+        ],
+        "type": "standard"
+    },
+    "autel3": {
+        "add_perm": false,
+        "category": "autel",
+        "cooldowns": {
+            "n": -1,
+            "rrg": 0,
+            "tg": 4.799999999999999,
+            "trg": 0,
+            "wrg": 0
+        },
+        "id": 3,
+        "lvl": 0,
+        "pos": [
+            -10,
+            -8
+        ],
+        "size": [
+            2,
+            2
+        ],
+        "type": "standard"
+    },
+    "decoration10": {
+        "add_perm": false,
+        "category": "decoration",
+        "cooldowns": {
+            "n": -1,
+            "rrg": 0,
+            "tg": 8.999999999999984,
+            "trg": 0,
+            "wrg": 0
+        },
+        "id": 10,
+        "lvl": 0,
+        "pos": [
+            0,
+            -8
+        ],
+        "size": [
+            1,
+            1
+        ],
+        "type": "arbre"
+    },
+    "decoration11": {
+        "add_perm": false,
+        "category": "decoration",
+        "cooldowns": {
+            "n": -1,
+            "rrg": 0,
+            "tg": 7.599999999999989,
+            "trg": 0,
+            "wrg": 0
+        },
+        "id": 11,
+        "lvl": 0,
+        "pos": [
+            1,
+            -7
+        ],
+        "size": [
+            1,
+            1
+        ],
+        "type": "arbre"
+    },
+    "decoration12": {
+        "add_perm": false,
+        "category": "decoration",
+        "cooldowns": {
+            "n": -1,
+            "rrg": 0,
+            "tg": 5.999999999999995,
+            "trg": 0,
+            "wrg": 0
+        },
+        "id": 12,
+        "lvl": 0,
+        "pos": [
+            0,
+            -6
+        ],
+        "size": [
+            1,
+            1
+        ],
+        "type": "arbre"
+    },
+    "decoration8": {
+        "add_perm": false,
+        "category": "decoration",
+        "cooldowns": {
+            "n": -1,
+            "rrg": 0,
+            "tg": 3.0000000000000013,
+            "trg": 0,
+            "wrg": 0
+        },
+        "id": 8,
+        "lvl": 0,
+        "pos": [
+            -1,
+            -8
+        ],
+        "size": [
+            1,
+            1
+        ],
+        "type": "arbre"
+    },
+    "decoration9": {
+        "add_perm": false,
+        "category": "decoration",
+        "cooldowns": {
+            "n": -1,
+            "rrg": 0,
+            "tg": 0.9999999999999999,
+            "trg": 0,
+            "wrg": 0
+        },
+        "id": 9,
+        "lvl": 0,
+        "pos": [
+            -1,
+            -7
+        ],
+        "size": [
+            1,
+            1
+        ],
+        "type": "arbre"
+    },
+    "entrepot5": {
+        "add_perm": false,
+        "category": "entrepot",
+        "cooldowns": {
+            "n": -1,
+            "rrg": 0,
+            "tg": 39.000000000000284,
+            "trg": 0,
+            "wrg": 0
+        },
+        "id": 5,
+        "lvl": 0,
+        "pos": [
+            -6,
+            -8
+        ],
+        "size": [
+            2,
+            1
+        ],
+        "type": "standard"
+    },
+    "entrepot6": {
+        "add_perm": false,
+        "category": "entrepot",
+        "cooldowns": {
+            "n": -1,
+            "rrg": 0,
+            "tg": 37.20000000000026,
+            "trg": 0,
+            "wrg": 0
+        },
+        "id": 6,
+        "lvl": 0,
+        "pos": [
+            -6,
+            -7
+        ],
+        "size": [
+            2,
+            1
+        ],
+        "type": "standard"
+    },
+    "orb0": {
+        "add_perm": false,
+        "category": "orb",
+        "cooldowns": {
+            "n": -1,
+            "rrg": 0,
+            "tg": 8.999999999999984,
+            "trg": 0,
+            "wrg": 0
+        },
+        "id": 0,
+        "lvl": 0,
+        "pos": [
+            -3,
             -2
         ],
         "size": [
@@ -43,21 +263,21 @@
         ],
         "type": "standard"
     },
-    "orb0": {
+    "orb4": {
         "add_perm": false,
+        "category": "orb",
         "cooldowns": {
             "n": -1,
             "rrg": 0,
-            "tg": 8.799999999999985,
+            "tg": 1.6000000000000003,
             "trg": 0,
             "wrg": 0
         },
-        "id": 0,
+        "id": 4,
         "lvl": 0,
-        "name": "orb",
         "pos": [
-            -4,
-            0
+            -8,
+            -8
         ],
         "size": [
             2,

@@ -23,10 +23,10 @@ CYAN     = (  0, 255, 255)
 b_imgs = {
     'autel' : pygame.image.load('projet/data/images/autel.png'),
     'orb' : pygame.image.load('projet/data/images/orb.png'),
-    #'residence' : pygame.image.load('projet/data/images/residence.png'),
-    #'entrepot' : pygame.image.load('projet/data/images/entrepot.png'),
+    'residence' : pygame.image.load('projet/data/images/residence.png'),
+    'entrepot' : pygame.image.load('projet/data/images/entrepot.png'),
     'armurerie' : pygame.image.load('projet/data/images/armurerie.png'),
-    #'decoration' : pygame.image.load('projet/data/images/decoration.png')
+    'decoration' : pygame.image.load('projet/data/images/decoration.png')
 }
 
 #setup
@@ -109,7 +109,7 @@ def getBuildRect(pos,size,cor_pos=-1,cor_size=2,cor_r_pos_x=WX/2,cor_r_pos_y=WY/
     return rect
 
 def blitBuilding(building,fade=0):
-    img = b_imgs[building.name]
+    img = b_imgs[building.category]
     DISPLAYSURF.blit(img, relativeCoordsToPixels(building.pos))
 
 def highlight(pos,size,color=WHITE):
@@ -125,10 +125,10 @@ def mouseOverBuilding(building,mouse_pos):
         return True
     return False
 
-def buildingOverBuilding(building1,building2):
-    rect1 = getBuildRect(building1.pos,building1.size,0,0)
+def buildingOverBuilding(coords,size,building2):
+    rect1 = getBuildRect(coords,size,0,0)
     rect2 = getBuildRect(building2.pos,building2.size,0,0)
-    if rect1.colliderect(rect2):
+    if rect2.colliderect(rect1):
         return True
     return False
 

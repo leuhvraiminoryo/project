@@ -4,8 +4,17 @@ placing = None
 left_click = False
 right_click = False
 
-list_buildings = load_buildings("projet/data/json/yeet.json")
-print(list_buildings)
+
+
+pressed = {
+        "a" : False,
+        "r" : False,
+        "o" : False,
+        "d" : False,
+        "e" : False,
+        "w" : False,
+    }
+
 
 while True:
     checkForQuit(list_buildings,e.ressources)
@@ -15,28 +24,77 @@ while True:
     e.ressources['soul_points'] += 1
     mouse_pos = pygame.mouse.get_pos ()
     
+    
     to_highlight = None
     to_red = []
     to_menu = None
-
+    posable = True
+    
     for event in pygame.event.get():
         if event.type == MOUSEBUTTONDOWN:
             if event.button == 1:
                 left_click = True
             if event.button == 3:
                 right_click = True
-        elif event.type == MOUSEBUTTONUP:
+        if event.type == MOUSEBUTTONUP:
             if event.button == 1:
                 left_click = False
             if event.button == 3:
                 right_click = False
+        pygame.event.post(event)
+            
+
+
+    for event in pygame.event.get(KEYUP):
+        if event.key == K_a:
+            pressed["a"] = False
+        if event.key == K_e:
+            pressed["e"] = False
+        if event.key == K_w:
+            pressed["w"] = False
+        if event.key == K_o:
+            pressed["o"] = False
+        if event.key == K_d:
+            pressed["d"] = False
+        if event.key == K_r:
+            pressed["r"] = False
+    
+    for event in pygame.event.get(KEYDOWN):
+        if event.key == K_a:
+            pressed["a"] = True
+        if event.key == K_e:
+            pressed["e"] = True
+        if event.key == K_w:
+            pressed["w"] = True
+        if event.key == K_o:
+            pressed["o"] = True
+        if event.key == K_d:
+            pressed["d"] = True
+        if event.key == K_r:
+            pressed["r"] = True
+    
 
     if left_click:
         placing = None
     if placing is not None:
         toPlace(placing,mouse_pos)
-        
-    
+    if True in pressed.values():
+        for building in list_buildings:
+            if buildingOverBuilding(pixelsToRelativeCoords(mouse_pos),(2,2),building):
+                posable = False
+        if posable:
+            if pressed["o"]:
+                list_buildings.append(cl.Building('orb','standard',pixelsToRelativeCoords(mouse_pos),(2,2)))
+            if pressed["a"]:
+                list_buildings.append(cl.Building('autel','standard',pixelsToRelativeCoords(mouse_pos),(2,2)))
+            if pressed["e"]:
+                list_buildings.append(cl.Building('entrepot','standard',pixelsToRelativeCoords(mouse_pos),(2,1)))
+            if pressed["r"]:
+                list_buildings.append(cl.Building('residence','standard',pixelsToRelativeCoords(mouse_pos),(1,1)))
+            if pressed["w"]:
+                list_buildings.append(cl.Building('armurerie','standard',pixelsToRelativeCoords(mouse_pos),(3,2)))
+            if pressed["d"]:
+                list_buildings.append(cl.Building('decoration','arbre',pixelsToRelativeCoords(mouse_pos),(1,1)))
 
     for building in list_buildings:
         if building.lvl >= 0:
@@ -49,7 +107,7 @@ while True:
                 if right_click:
                     placing = building
             if placing is not None:
-                if buildingOverBuilding(placing,building):
+                if buildingOverBuilding(placing.pos,placing.size,building):
                     to_red.append(building)
         else:
             placing = building
