@@ -13,13 +13,14 @@ codes = {"sp" : "soul_points",
 "f" : "faith", "ae" : "aesthetic", 
 "h" : "happiness", "r" : "residents", 
 "fc" : "max_faith", "spc" : "max_sp", 
-"ic" : "qtt_ressources", "ec" : "max_equipement"}
+"ic" : "qtt_ressources", "ec" : "max_equipement",
+"rc" : "max_residents"}
 
 #répartition des différents arbres d'évolution :
 orb_tree = tree["orb"]
 autel_tree = tree["autel"]
 armurerie_tree = tree["armurerie"]
-residences_tree = tree["residences"]
+residence_tree = tree["residence"]
 entrepot_tree = tree["entrepot"]
 
 #liste des décorations :
@@ -37,6 +38,6 @@ def decodage(building):
             building.cooldowns[cd] = 0
             ressources[codes[effect[2]]] += int(effect[3])
         
-    
-
 #res = extract('projet/dynamic_data/ressources.json')
+
+buildsize = extract("projet/data/json/builds_sizes.json")

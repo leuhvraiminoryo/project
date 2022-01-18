@@ -52,6 +52,15 @@ armurerie1.lvl = 0
 autel1 = cl.Building('autel','standard',(0,0),(2,2))
 autel1.lvl = 0
 
+#setup building sizes
+orb_size = (e.buildsize["orb"]["size_x"],e.buildsize["orb"]["size_y"])
+autel_size = (e.buildsize["autel"]["size_x"],e.buildsize["autel"]["size_y"])
+armurerie_size = (e.buildsize["armurerie"]["size_x"],e.buildsize["armurerie"]["size_y"])
+residence_size = (e.buildsize["residence"]["size_x"],e.buildsize["residence"]["size_y"])
+entrepot_size = (e.buildsize["entrepot"]["size_x"],e.buildsize["entrepot"]["size_y"])
+decoration_size = (e.buildsize["decoration"]["size_x"],e.buildsize["decoration"]["size_y"])
+
+
 list_buildings = [armurerie1,orb1,autel1]
 
 # Text ------------------------------------------------------- #
@@ -80,11 +89,11 @@ other_font_dat = {'A':[3],'B':[3],'C':[3],'D':[3],'E':[3],'F':[3],'G':[3],'H':[3
 other_font = text.generate_font('projet/data/font/new_font.png',other_font_dat,8,10,(248,248,248))
 
 
-def relativeCoordsToPixels(coords,cor_x=(WX/2),cor_y=(WY/2)):
+def BoxCoordsToPixels(coords,cor_x=(WX/2),cor_y=(WY/2)):
     x,y = coords
     return [(x*BOXSIZE)+cor_x,(y*BOXSIZE)+cor_y]
 
-def pixelsToRelativeCoords(coords,cor_x=(WX/2),cor_y=(WY/2)):
+def pixelsToBoxCoords(coords,cor_x=(WX/2),cor_y=(WY/2)):
     x,y = coords
     return [round((x-cor_x)/BOXSIZE),round((y-cor_y)/BOXSIZE)]
 
@@ -103,19 +112,19 @@ def checkForQuit(l_b,res):
         pygame.event.post(event)
 
 def getBuildRect(pos,size,cor_pos=-1,cor_size=2,cor_r_pos_x=WX/2,cor_r_pos_y=WY/2):
-    x,y = relativeCoordsToPixels(pos,cor_r_pos_x,cor_r_pos_y)
+    x,y = BoxCoordsToPixels(pos,cor_r_pos_x,cor_r_pos_y)
     sizex, sizey = size[0]*BOXSIZE,size[1]*BOXSIZE
     rect = pygame.Rect(x+cor_pos,y+cor_pos,sizex+cor_size,sizey+cor_size)
     return rect
 
 def blitBuilding(building,fade=0):
     img = b_imgs[building.category]
-    DISPLAYSURF.blit(img, relativeCoordsToPixels(building.pos))
+    DISPLAYSURF.blit(img, BoxCoordsToPixels(building.pos))
 
 def highlight(pos,size,color=WHITE):
     """Trace rectangle autours d'un buildet
     pos relative en boites
-    size relative en boites"""
+    size relaive en boites"""
     rect = getBuildRect(pos,size)
     pygame.draw.rect(DISPLAYSURF, color, rect, width=1)
 
@@ -133,11 +142,11 @@ def buildingOverBuilding(coords,size,building2):
     return False
 
 def showTranspaRed(building):
-    size = relativeCoordsToPixels(building.size,0,0)
+    size = BoxCoordsToPixels(building.size,0,0)
     s = pygame.Surface(size)
     s.set_alpha(150)
     s.fill(RED)
-    DISPLAYSURF.blit(s,relativeCoordsToPixels(building.pos))
+    DISPLAYSURF.blit(s,BoxCoordsToPixels(building.pos))
     highlight(building.pos,building.size,BLACK)
 
 def drawGrid():
@@ -149,20 +158,20 @@ def drawGrid():
 def toPlace(building,mouse_pos):
     drawGrid()
     sizex,sizey = building.size
-    building.pos = pixelsToRelativeCoords(mouse_pos,WX/2+(BOXSIZE*sizex/2),WY/2+(BOXSIZE*sizey/2))
+    building.pos = pixelsToBoxCoords(mouse_pos,WX/2+(BOXSIZE*sizex/2),WY/2+(BOXSIZE*sizey/2))
     blitBuilding(building)
     
 
 
 def isBuildRight(building):
     """check si le building selectioné est sur la droite relative de la fenêtre"""
-    x,y = relativeCoordsToPixels(building.pos)
+    x,y = BoxCoordsToPixels(building.pos)
     if x > WX/2:
         return False
     return True
     
 def getMenuCoords(building):
-    x,y = relativeCoordsToPixels(building.pos)
+    x,y = BoxCoordsToPixels(building.pos)
     if isBuildRight(building):
         x += building.size[0] + 1
     else:
@@ -188,7 +197,7 @@ def drawMenu(building):
     size = getMenuSize(building)
     menu = pygame.Surface((size+10,MENUY)) #utiliser getMenuSize() fait bugguer?
     menu.fill(PURPLE)
-    display_coords = relativeCoordsToPixels(building.pos)
+    display_coords = BoxCoordsToPixels(building.pos)
     build_size = (building.size[0]*BOXSIZE,building.size[1]*BOXSIZE) 
     print(display_coords)
     display_coords[0] -= (size+10-build_size[0])/2
@@ -206,7 +215,7 @@ def save_buildings(list_buildings,file_name):
 
 def save_res(res,file_name):
     with open(file_name,"w") as file:
-        data = json.dump(res,file)
+        data = json.dump(res,file, sort_keys=True, indent=4)
 
 def load_buildings(file):
     list_builds = []

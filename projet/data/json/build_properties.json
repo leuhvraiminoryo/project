@@ -27,7 +27,7 @@
             "n 0 ec 15; n 0 ae 40",
             "n 0 ec 20; n 0 ae 60"]
     },
-    "residences" : {
+    "residence" : {
         "standard" : ["n 0 rc 10","n 0 rc 20","n 0 rc 40"]
     },
     "entrepot" : {

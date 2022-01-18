@@ -1,0 +1,20 @@
+{
+    "autel": {
+        "size_x": 2, "size_y" : 2
+        }, 
+    "residence": {
+        "size_x": 1, "size_y" : 1
+        }, 
+    "entrepot": {
+        "size_x": 2, "size_y" : 1
+        }, 
+    "armurerie": {
+        "size_x": 3, "size_y" : 2
+        }, 
+    "decoration": {
+        "size_x": 1, "size_y" : 1
+        }, 
+    "orb": {
+        "size_x": 2, "size_y" : 2
+        }
+}

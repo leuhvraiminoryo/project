@@ -80,21 +80,21 @@ while True:
         toPlace(placing,mouse_pos)
     if True in pressed.values():
         for building in list_buildings:
-            if buildingOverBuilding(pixelsToRelativeCoords(mouse_pos),(2,2),building):
+            if buildingOverBuilding(pixelsToBoxCoords(mouse_pos),(2,2),building):
                 posable = False
         if posable:
             if pressed["o"]:
-                list_buildings.append(cl.Building('orb','standard',pixelsToRelativeCoords(mouse_pos),(2,2)))
+                list_buildings.append(cl.Building('orb','standard',pixelsToBoxCoords(mouse_pos),(2,2)))
             if pressed["a"]:
-                list_buildings.append(cl.Building('autel','standard',pixelsToRelativeCoords(mouse_pos),(2,2)))
+                list_buildings.append(cl.Building('autel','standard',pixelsToBoxCoords(mouse_pos),(2,2)))
             if pressed["e"]:
-                list_buildings.append(cl.Building('entrepot','standard',pixelsToRelativeCoords(mouse_pos),(2,1)))
+                list_buildings.append(cl.Building('entrepot','standard',pixelsToBoxCoords(mouse_pos),(2,1)))
             if pressed["r"]:
-                list_buildings.append(cl.Building('residence','standard',pixelsToRelativeCoords(mouse_pos),(1,1)))
+                list_buildings.append(cl.Building('residence','standard',pixelsToBoxCoords(mouse_pos),(1,1)))
             if pressed["w"]:
-                list_buildings.append(cl.Building('armurerie','standard',pixelsToRelativeCoords(mouse_pos),(3,2)))
+                list_buildings.append(cl.Building('armurerie','standard',pixelsToBoxCoords(mouse_pos),(3,2)))
             if pressed["d"]:
-                list_buildings.append(cl.Building('decoration','arbre',pixelsToRelativeCoords(mouse_pos),(1,1)))
+                list_buildings.append(cl.Building('decoration','arbre',pixelsToBoxCoords(mouse_pos),(1,1)))
 
     for building in list_buildings:
         if building.lvl >= 0:
