@@ -84,7 +84,6 @@ while True:
     if placing is not None:
         toPlace(placing,mouse_pos)
     if True in pressed.values():
-        print('detected')
         for building in list_buildings:
             if buildingOverBuilding(pixelsToBoxCoords(mouse_pos),(2,2),building) and pressed["del"]:
                 list_buildings.pop(list_buildings.index(building))
