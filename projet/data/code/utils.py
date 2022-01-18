@@ -208,8 +208,8 @@ def drawMenu(building):
 
 def save_buildings(list_buildings,file_name):
     dict_prin = {}
-    for i in list_buildings:
-        dict_prin[i.get_bat_id()] = i.tojson()
+    for build in list_buildings:
+        dict_prin[build.get_bat_id()] = build.tojson()
     with open(file_name,"w") as file:
         data = json.dump(dict_prin, file, cls=cl.CustomEncoder, sort_keys=True, indent=4)
 
