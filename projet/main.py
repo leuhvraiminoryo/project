@@ -13,6 +13,7 @@ pressed = {
         "d" : False,
         "e" : False,
         "w" : False,
+        "del" : False
     }
 
 
@@ -58,6 +59,8 @@ while True:
             pressed["d"] = False
         if event.key == K_r:
             pressed["r"] = False
+        if event.key == K_BACKSPACE:
+            pressed["del"] = False
     
     for event in pygame.event.get(KEYDOWN):
         if event.key == K_a:
@@ -72,6 +75,8 @@ while True:
             pressed["d"] = True
         if event.key == K_r:
             pressed["r"] = True
+        if event.key == K_BACKSPACE:
+            pressed["del"] = True
     
 
     if left_click:
@@ -79,9 +84,13 @@ while True:
     if placing is not None:
         toPlace(placing,mouse_pos)
     if True in pressed.values():
+        print('detected')
         for building in list_buildings:
+            if buildingOverBuilding(pixelsToBoxCoords(mouse_pos),(2,2),building) and pressed["del"]:
+                list_buildings.pop(list_buildings.index(building))
             if buildingOverBuilding(pixelsToBoxCoords(mouse_pos),(2,2),building):
                 posable = False
+
         if posable:
             if pressed["o"]:
                 list_buildings.append(cl.Building('orb','standard',pixelsToBoxCoords(mouse_pos),(2,2)))
