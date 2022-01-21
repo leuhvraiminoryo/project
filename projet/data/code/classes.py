@@ -36,6 +36,9 @@ class Building:
     def get_bat_id(self):
         return self.category + str(self.id)
     
+    def lvlup(self):
+        self.lvl += 1
+    
 
 class CustomEncoder(json.JSONEncoder):
     def default(self, o):

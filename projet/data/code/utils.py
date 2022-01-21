@@ -230,6 +230,10 @@ def load_buildings(file):
     return list_builds
 
 
+def increaseLevel(building):
+    building.lvlup()
+    return e.tree[building.category][building.type][building.lvl]
+
 
 
     
