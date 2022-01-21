@@ -16,6 +16,7 @@ while True:
     to_red = []
     to_menu = None
     posable = True
+    a_poser = None
 
     pressed,left_click,right_click = verif_keys(pressed,left_click,right_click)
 
@@ -42,10 +43,11 @@ while True:
         for building in list_buildings:
             if buildingOverBuilding(pixelsToBoxCoords(mouse_pos),(1,1),building) and pressed["del"]:
                 list_buildings.pop(list_buildings.index(building))
-            if buildingOverBuilding(pixelsToBoxCoords(mouse_pos),(e.buildsize[a_poser.category]["size_x"],e.buildsize[a_poser.category]["size_y"]),building):
-                posable = False
+            if a_poser is not None:
+                if buildingOverBuilding(pixelsToBoxCoords(mouse_pos),(e.buildsize[a_poser.category]["size_x"],e.buildsize[a_poser.category]["size_y"]),building):
+                    posable = False
 
-        if posable:
+        if posable and a_poser is not None:
             list_buildings.append(a_poser)
 
 
