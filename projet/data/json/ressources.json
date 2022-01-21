@@ -1,12 +1,12 @@
 {
-    "aesthetic": 1893250,
-    "faith": 23600,
-    "happiness": 4120,
-    "max_equipement": 350,
+    "aesthetic": 1897900,
+    "faith": 41100,
+    "happiness": 6660,
+    "max_equipement": 410,
     "max_faith": 10,
-    "max_residents": 560,
+    "max_residents": 810,
     "max_sp": 10,
-    "qtt_ressources": 90,
+    "qtt_ressources": 180,
     "residents": 0,
-    "soul_points": 18979
+    "soul_points": 21169
 }
