@@ -31,6 +31,7 @@ while True:
     to_menu = None
     posable = True
     
+    
     for event in pygame.event.get():
         if event.type == MOUSEBUTTONDOWN:
             if event.button == 1:
