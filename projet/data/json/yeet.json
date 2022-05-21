@@ -5,7 +5,7 @@
         "cooldowns": {
             "n": -1,
             "rrg": 0,
-            "tg": 65.00000000000058,
+            "tg": 34.70000000000022,
             "trg": 0,
             "wrg": 0
         },
@@ -21,21 +21,21 @@
         ],
         "type": "standard"
     },
-    "autel106": {
+    "autel14": {
         "add_perm": false,
         "category": "autel",
         "cooldowns": {
             "n": -1,
             "rrg": 0,
-            "tg": 1.0999999999999999,
+            "tg": 9.399999999999983,
             "trg": 0,
             "wrg": 0
         },
-        "id": 106,
+        "id": 14,
         "lvl": 0,
         "pos": [
-            -6,
-            0
+            -3,
+            -7
         ],
         "size": [
             2,
@@ -43,117 +43,7 @@
         ],
         "type": "standard"
     },
-    "autel115": {
-        "add_perm": false,
-        "category": "autel",
-        "cooldowns": {
-            "n": -1,
-            "rrg": 0,
-            "tg": 0.2,
-            "trg": 0,
-            "wrg": 0
-        },
-        "id": 115,
-        "lvl": 0,
-        "pos": [
-            -7,
-            3
-        ],
-        "size": [
-            2,
-            2
-        ],
-        "type": "standard"
-    },
-    "autel118": {
-        "add_perm": false,
-        "category": "autel",
-        "cooldowns": {
-            "n": -1,
-            "rrg": 0,
-            "tg": 9.99999999999998,
-            "trg": 0,
-            "wrg": 0
-        },
-        "id": 118,
-        "lvl": 0,
-        "pos": [
-            -8,
-            5
-        ],
-        "size": [
-            2,
-            2
-        ],
-        "type": "standard"
-    },
-    "autel123": {
-        "add_perm": false,
-        "category": "autel",
-        "cooldowns": {
-            "n": -1,
-            "rrg": 0,
-            "tg": 9.499999999999982,
-            "trg": 0,
-            "wrg": 0
-        },
-        "id": 123,
-        "lvl": 0,
-        "pos": [
-            -7,
-            7
-        ],
-        "size": [
-            2,
-            2
-        ],
-        "type": "standard"
-    },
-    "autel141": {
-        "add_perm": false,
-        "category": "autel",
-        "cooldowns": {
-            "n": -1,
-            "rrg": 0,
-            "tg": 7.699999999999989,
-            "trg": 0,
-            "wrg": 0
-        },
-        "id": 141,
-        "lvl": 0,
-        "pos": [
-            -5,
-            5
-        ],
-        "size": [
-            2,
-            2
-        ],
-        "type": "standard"
-    },
-    "autel170": {
-        "add_perm": false,
-        "category": "autel",
-        "cooldowns": {
-            "n": -1,
-            "rrg": 0,
-            "tg": 4.799999999999999,
-            "trg": 0,
-            "wrg": 0
-        },
-        "id": 170,
-        "lvl": 0,
-        "pos": [
-            10,
-            -8
-        ],
-        "size": [
-            2,
-            2
-        ],
-        "type": "standard"
-    },
-    "autel174": {
+    "autel2": {
         "add_perm": false,
         "category": "autel",
         "cooldowns": {
@@ -163,11 +53,11 @@
             "trg": 0,
             "wrg": 0
         },
-        "id": 174,
+        "id": 2,
         "lvl": 0,
         "pos": [
-            7,
-            -7
+            0,
+            0
         ],
         "size": [
             2,
@@ -175,285 +65,21 @@
         ],
         "type": "standard"
     },
-    "autel19": {
+    "autel3": {
         "add_perm": false,
         "category": "autel",
         "cooldowns": {
             "n": -1,
             "rrg": 0,
-            "tg": 9.799999999999981,
+            "tg": 1.9000000000000006,
             "trg": 0,
             "wrg": 0
         },
-        "id": 19,
+        "id": 3,
         "lvl": 0,
         "pos": [
-            -10,
-            -2
-        ],
-        "size": [
-            2,
-            2
-        ],
-        "type": "standard"
-    },
-    "autel20": {
-        "add_perm": false,
-        "category": "autel",
-        "cooldowns": {
-            "n": -1,
-            "rrg": 0,
-            "tg": 9.699999999999982,
-            "trg": 0,
-            "wrg": 0
-        },
-        "id": 20,
-        "lvl": 0,
-        "pos": [
-            -10,
-            1
-        ],
-        "size": [
-            2,
-            2
-        ],
-        "type": "standard"
-    },
-    "autel22": {
-        "add_perm": false,
-        "category": "autel",
-        "cooldowns": {
-            "n": -1,
-            "rrg": 0,
-            "tg": 9.499999999999982,
-            "trg": 0,
-            "wrg": 0
-        },
-        "id": 22,
-        "lvl": 0,
-        "pos": [
-            -10,
-            6
-        ],
-        "size": [
-            2,
-            2
-        ],
-        "type": "standard"
-    },
-    "autel25": {
-        "add_perm": false,
-        "category": "autel",
-        "cooldowns": {
-            "n": -1,
-            "rrg": 0,
-            "tg": 9.199999999999983,
-            "trg": 0,
-            "wrg": 0
-        },
-        "id": 25,
-        "lvl": 0,
-        "pos": [
-            -9,
-            8
-        ],
-        "size": [
-            2,
-            2
-        ],
-        "type": "standard"
-    },
-    "autel26": {
-        "add_perm": false,
-        "category": "autel",
-        "cooldowns": {
-            "n": -1,
-            "rrg": 0,
-            "tg": 9.099999999999984,
-            "trg": 0,
-            "wrg": 0
-        },
-        "id": 26,
-        "lvl": 0,
-        "pos": [
-            -9,
-            10
-        ],
-        "size": [
-            2,
-            2
-        ],
-        "type": "standard"
-    },
-    "autel28": {
-        "add_perm": false,
-        "category": "autel",
-        "cooldowns": {
-            "n": -1,
-            "rrg": 0,
-            "tg": 8.899999999999984,
-            "trg": 0,
-            "wrg": 0
-        },
-        "id": 28,
-        "lvl": 0,
-        "pos": [
-            -4,
-            9
-        ],
-        "size": [
-            2,
-            2
-        ],
-        "type": "standard"
-    },
-    "autel31": {
-        "add_perm": false,
-        "category": "autel",
-        "cooldowns": {
-            "n": -1,
-            "rrg": 0,
-            "tg": 8.599999999999985,
-            "trg": 0,
-            "wrg": 0
-        },
-        "id": 31,
-        "lvl": 0,
-        "pos": [
-            3,
-            9
-        ],
-        "size": [
-            2,
-            2
-        ],
-        "type": "standard"
-    },
-    "autel32": {
-        "add_perm": false,
-        "category": "autel",
-        "cooldowns": {
-            "n": -1,
-            "rrg": 0,
-            "tg": 8.499999999999986,
-            "trg": 0,
-            "wrg": 0
-        },
-        "id": 32,
-        "lvl": 0,
-        "pos": [
-            5,
-            8
-        ],
-        "size": [
-            2,
-            2
-        ],
-        "type": "standard"
-    },
-    "autel34": {
-        "add_perm": false,
-        "category": "autel",
-        "cooldowns": {
-            "n": -1,
-            "rrg": 0,
-            "tg": 8.299999999999986,
-            "trg": 0,
-            "wrg": 0
-        },
-        "id": 34,
-        "lvl": 0,
-        "pos": [
-            10,
-            8
-        ],
-        "size": [
-            2,
-            2
-        ],
-        "type": "standard"
-    },
-    "autel37": {
-        "add_perm": false,
-        "category": "autel",
-        "cooldowns": {
-            "n": -1,
-            "rrg": 0,
-            "tg": 7.999999999999988,
-            "trg": 0,
-            "wrg": 0
-        },
-        "id": 37,
-        "lvl": 0,
-        "pos": [
-            10,
-            5
-        ],
-        "size": [
-            2,
-            2
-        ],
-        "type": "standard"
-    },
-    "autel38": {
-        "add_perm": false,
-        "category": "autel",
-        "cooldowns": {
-            "n": -1,
-            "rrg": 0,
-            "tg": 7.899999999999988,
-            "trg": 0,
-            "wrg": 0
-        },
-        "id": 38,
-        "lvl": 0,
-        "pos": [
-            8,
-            5
-        ],
-        "size": [
-            2,
-            2
-        ],
-        "type": "standard"
-    },
-    "autel48": {
-        "add_perm": false,
-        "category": "autel",
-        "cooldowns": {
-            "n": -1,
-            "rrg": 0,
-            "tg": 6.8999999999999915,
-            "trg": 0,
-            "wrg": 0
-        },
-        "id": 48,
-        "lvl": 0,
-        "pos": [
-            7,
-            3
-        ],
-        "size": [
-            2,
-            2
-        ],
-        "type": "standard"
-    },
-    "autel62": {
-        "add_perm": false,
-        "category": "autel",
-        "cooldowns": {
-            "n": -1,
-            "rrg": 0,
-            "tg": 5.4999999999999964,
-            "trg": 0,
-            "wrg": 0
-        },
-        "id": 62,
-        "lvl": 0,
-        "pos": [
-            -4,
-            7
+            0,
+            -4
         ],
         "size": [
             2,
